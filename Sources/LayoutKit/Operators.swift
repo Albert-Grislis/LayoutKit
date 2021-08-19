@@ -7,34 +7,42 @@
 
 import UIKit
 
+@inlinable
 public func +<Anchor: LayoutAnchor>(lhs: Anchor, rhs: CGFloat) -> (Anchor, CGFloat) {
     return (lhs, rhs)
 }
 
+@inlinable
 public func -<Anchor: LayoutAnchor>(lhs: Anchor, rhs: CGFloat) -> (Anchor, CGFloat) {
     return (lhs, -rhs)
 }
 
-public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.equal(to: rhs.0, offsetBy: rhs.1)
-}
-
+@inlinable
 public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.equal(to: rhs)
+    lhs.setEqual(to: rhs)
 }
 
+@inlinable
+public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
+    lhs.setEqual(to: rhs.0, offsetBy: rhs.1)
+}
+
+@inlinable
 public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.greaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+    lhs.setGreaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
+@inlinable
 public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.greaterThanOrEqual(to: rhs)
+    lhs.setGreaterThanOrEqual(to: rhs)
 }
 
+@inlinable
 public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.lessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+    lhs.setLessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
+@inlinable
 public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.lessThanOrEqual(to: rhs)
+    lhs.setLessThanOrEqual(to: rhs)
 }

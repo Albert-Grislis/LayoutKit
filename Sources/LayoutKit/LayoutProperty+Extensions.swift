@@ -7,23 +7,40 @@
 
 import UIKit
 
-extension LayoutProperty {
+public extension LayoutProperty {
     
-    // MARK: Internal methods
-    func equal(to otherAnchor: Anchor,
-               offsetBy constant: CGFloat = 0) {
+    // MARK: Public methods
+    func getEqual(to otherAnchor: Anchor,
+                  offsetBy constant: CGFloat = 0) -> NSLayoutConstraint {
+        anchor.constraint(equalTo: otherAnchor,
+                          constant: constant)
+    }
+    func setEqual(to otherAnchor: Anchor,
+                  offsetBy constant: CGFloat = 0) {
         anchor.constraint(equalTo: otherAnchor,
                           constant: constant).isActive = true
     }
     
-    func greaterThanOrEqual(to otherAnchor: Anchor,
-                            offsetBy constant: CGFloat = 0) {
+    func getGreaterThanOrEqual(to otherAnchor: Anchor,
+                               offsetBy constant: CGFloat = 0) -> NSLayoutConstraint {
+        anchor.constraint(greaterThanOrEqualTo: otherAnchor,
+                          constant: constant)
+    }
+    
+    func setGreaterThanOrEqual(to otherAnchor: Anchor,
+                               offsetBy constant: CGFloat = 0) {
         anchor.constraint(greaterThanOrEqualTo: otherAnchor,
                           constant: constant).isActive = true
     }
     
-    func lessThanOrEqual(to otherAnchor: Anchor,
-                         offsetBy constant: CGFloat = 0) {
+    func getLessThanOrEqual(to otherAnchor: Anchor,
+                            offsetBy constant: CGFloat = 0) -> NSLayoutConstraint {
+        anchor.constraint(lessThanOrEqualTo: otherAnchor,
+                          constant: constant)
+    }
+    
+    func setLessThanOrEqual(to otherAnchor: Anchor,
+                            offsetBy constant: CGFloat = 0) {
         anchor.constraint(lessThanOrEqualTo: otherAnchor,
                           constant: constant).isActive = true
     }

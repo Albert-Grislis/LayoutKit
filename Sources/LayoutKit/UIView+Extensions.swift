@@ -9,8 +9,14 @@ import UIKit
 
 public extension UIView {
     
-    func layout(using closure: (LayoutProxy) -> Void) {
+    // MARK: Public properties
+    var layoutProxy: LayoutProxy {
+        LayoutProxy(view: self)
+    }
+    
+    // MARK: Public methods
+    func makeLayout(using closure: (LayoutProxy) -> Void) {
         translatesAutoresizingMaskIntoConstraints = false
-        closure(LayoutProxy(view: self))
+        closure(layoutProxy)
     }
 }
