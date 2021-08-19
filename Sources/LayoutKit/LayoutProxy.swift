@@ -21,7 +21,7 @@ public final class LayoutProxy {
     private let view: UIView
     
     // MARK: Initializers & Deinitializers
-    init(view: UIView) {
+    public init(view: UIView) {
         self.view = view
     }
     
