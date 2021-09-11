@@ -18,31 +18,31 @@ public func -<Anchor: LayoutAnchor>(lhs: Anchor, rhs: CGFloat) -> (Anchor, CGFlo
 }
 
 @inlinable
-public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.setEqual(to: rhs)
+public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
+    return lhs.getEqual(to: rhs)
 }
 
 @inlinable
-public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.setEqual(to: rhs.0, offsetBy: rhs.1)
+public func ==<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) -> NSLayoutConstraint {
+    return lhs.getEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 @inlinable
-public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.setGreaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) -> NSLayoutConstraint {
+    return lhs.getGreaterThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 @inlinable
-public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.setGreaterThanOrEqual(to: rhs)
+public func >=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
+    return lhs.getGreaterThanOrEqual(to: rhs)
 }
 
 @inlinable
-public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) {
-    lhs.setLessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
+public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (Anchor, CGFloat)) -> NSLayoutConstraint {
+    return lhs.getLessThanOrEqual(to: rhs.0, offsetBy: rhs.1)
 }
 
 @inlinable
-public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) {
-    lhs.setLessThanOrEqual(to: rhs)
+public func <=<Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
+    return lhs.getLessThanOrEqual(to: rhs)
 }
