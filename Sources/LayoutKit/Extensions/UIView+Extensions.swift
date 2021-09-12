@@ -15,8 +15,8 @@ public extension UIView {
     }
     
     // MARK: Public methods
-    func makeLayout(using closure: (LayoutProxy) -> Void) {
+    func makeLayout(using closure: (LayoutProxy) -> [NSLayoutConstraint]) {
         translatesAutoresizingMaskIntoConstraints = false
-        closure(layoutProxy)
+        NSLayoutConstraint.activate(closure(self.layoutProxy))
     }
 }
