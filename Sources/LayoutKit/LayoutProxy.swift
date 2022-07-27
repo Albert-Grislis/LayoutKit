@@ -18,10 +18,10 @@ public final class LayoutProxy {
     public lazy var centerY: LayoutAnchorProperty<NSLayoutYAxisAnchor> = layoutAnchorProperty(with: self.view.centerYAnchor)
     public lazy var width: LayoutDimensionProperty<NSLayoutDimension> = layoutDimensionProperty(with: self.view.widthAnchor)
     public lazy var height: LayoutDimensionProperty<NSLayoutDimension> = layoutDimensionProperty(with: self.view.heightAnchor)
-
+    
     // MARK: Private properties
     private let view: UIView
-
+    
     // MARK: Initializers & Deinitializers
     public init(view: UIView) {
         self.view = view
@@ -31,7 +31,7 @@ public final class LayoutProxy {
     private func layoutAnchorProperty<Anchor: LayoutAnchor>(with anchor: Anchor) -> LayoutAnchorProperty<Anchor> {
         return LayoutAnchorProperty(anchor: anchor)
     }
-
+    
     private func layoutDimensionProperty<Dimension: LayoutDimension>(with anchor: Dimension) -> LayoutDimensionProperty<Dimension> {
         return LayoutDimensionProperty(anchor: anchor)
     }

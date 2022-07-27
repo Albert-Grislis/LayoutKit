@@ -10,7 +10,13 @@ import UIKit
 public protocol LayoutDimension: LayoutAnchor {
     
     // MARK: Public methods
-    func constraint(equalToConstant constant: CGFloat) -> NSLayoutConstraint
-    func constraint(greaterThanOrEqualToConstant constant: CGFloat) -> NSLayoutConstraint
-    func constraint(lessThanOrEqualToConstant constant: CGFloat) -> NSLayoutConstraint
+    func constraint(
+        equalToConstant constant: CGFloat
+    ) -> NSLayoutConstraint
+    func constraint(
+        greaterThanOrEqualToConstant constant: CGFloat
+    ) -> NSLayoutConstraint
+    func constraint(
+        lessThanOrEqualToConstant constant: CGFloat
+    ) -> NSLayoutConstraint
 }

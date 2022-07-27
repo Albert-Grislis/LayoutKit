@@ -10,7 +10,16 @@ import UIKit
 public protocol LayoutAnchor {
     
     // MARK: Public methods
-    func constraint(equalTo anchor: Self, constant: CGFloat) -> NSLayoutConstraint
-    func constraint(greaterThanOrEqualTo anchor: Self, constant: CGFloat) -> NSLayoutConstraint
-    func constraint(lessThanOrEqualTo anchor: Self, constant: CGFloat) -> NSLayoutConstraint
+    func constraint(
+        equalTo anchor: Self,
+        constant: CGFloat
+    ) -> NSLayoutConstraint
+    func constraint(
+        greaterThanOrEqualTo anchor: Self,
+        constant: CGFloat
+    ) -> NSLayoutConstraint
+    func constraint(
+        lessThanOrEqualTo anchor: Self,
+        constant: CGFloat
+    ) -> NSLayoutConstraint
 }
