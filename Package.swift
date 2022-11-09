@@ -1,21 +1,25 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.7
 
 import PackageDescription
 
 let package = Package(
     name: "LayoutKit",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v16)
     ],
     products: [
         .library(
             name: "LayoutKit",
             type: .dynamic,
-            targets: ["LayoutKit"]),
+            targets: [
+                "LayoutKit",
+            ]
+        ),
     ],
     targets: [
         .target(
             name: "LayoutKit",
-            dependencies: []),
+            dependencies: []
+        ),
     ]
 )
