@@ -29,4 +29,13 @@ public extension UIView {
         self.addSubview(subview)
         subview.makeLayout(using: layoutClosure)
     }
+    
+    func insertSubview(
+        _ subview: UIView,
+        at: Int,
+        layoutClosure: (LayoutProxy) -> [NSLayoutConstraint]
+    ) {
+        self.insertSubview(subview, at: at)
+        subview.makeLayout(using: layoutClosure)
+    }
 }
