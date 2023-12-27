@@ -1,3 +1,3 @@
 # LayoutKit
 
-A description of this package.
+DSL for layout in iOS that allows declarate layout using math operators like ==, != (and additional functionality) to operate layout constraints...
